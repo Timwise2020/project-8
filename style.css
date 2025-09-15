@@ -1,0 +1,80 @@
+header{
+    color: white;
+  
+}
+body{
+    background-color:chocolate;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+  
+}
+.text{
+   text-align: left;
+   border: 1px solid;
+   border-style: none;
+   width: 500px;
+    margin-left: auto;
+   margin-right: auto;
+    margin-top: 10%;
+
+}
+.nav ul  :hover{
+    cursor: pointer;
+    color: orangered;
+}
+.pra1{
+    font-size: 18px;
+    font-weight: 400;
+}
+.pra2{
+    font-size: 25px;
+  font-weight: 600;
+}
+.pra3{
+   font-weight: 600;
+}
+.pra4{
+    font-size: 11px;
+}
+.form input[type="button"]{
+    background-color: rgb(186, 46, 186);
+    border-radius: 10px;
+    padding: 9px;
+   margin-left: 11rem;
+}
+
+.head{
+   margin: 0;
+   padding: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+.nav{ 
+    display: flex;
+
+  }
+ul{
+    list-style: none;
+    
+}
+.nav ul li{
+
+    display: inline;
+  border: 1px solid;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  padding: 5px;
+  border-style: none;
+}
+@media screen and (max-width: 560px) {
+    .text{
+        margin-left: 50px;
+    }
+    .nav ul li{
+        display: block;
+        margin-right: 13px;
+    }
+}
