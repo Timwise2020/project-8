@@ -38,14 +38,14 @@ body{
     font-size: 11px;
 }
 .form input[type="button"]{
-    background-color:rgba(8, 8, 244, 0.226);
-    border-radius: 10px;
+    background-color:rgba(250, 138, 97, 0.982);
+    border-radius: 7px;
     border: none;
     padding: 9px;
    margin-left: 11rem;
 }
 .form input[type="button"]:hover{
-    background-color: #135dfc;
+    background-color:#d35823;
     cursor: pointer;
 }
 
