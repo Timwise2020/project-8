@@ -1,24 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contact.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="contact.css">
+  <title>Contact Me</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
+
 <body>
-    <div class="form">
-     <h1>contact me</h1> 
-    <form action= "https://formsubmit.co/peterstimothy155@gmail.com" method="POST"></form>
-        <label for="fullname">Fullname</label><br>
-        <input type="full name" required placeholder="Enter your full name"><br><br>
-        <label for="email">Email address</label><br>
-        <input type="email" required placeholder="Enter your email"><br><br>
+  <div id="form">
+    <h1>Contact Me</h1>
+    <div id="head2">
+      <form id="contact-form">
+        <label>Fullname</label><br>
+        <input type="text" name="from_name" required placeholder="Enter your full name"><br><br>
+
+        <label>Email address</label><br>
+        <input type="email" name="from_email" required placeholder="Enter your email"><br><br>
+
         <label for="message">Message</label><br>
-        <input type="text" placeholder=" Your message..." required><br>
-        <input type="submit" value="send message">
-    </form>
+        <textarea id="message" name="message" required placeholder="Your message..."
+          style="width:80%; height:30px; resize: vertical;"></textarea><br><br>
+
+        <input type="submit" id="submit-btn" value="Send Message">
+        <span style="font-size: 20px;"></span>
+      </form>
     </div>
+  </div>
+
+  <script>
+    (function () {
+      emailjs.init("OaywwaZ-WvNk1xrdG"); 
+    })();
+
+    const form = document.getElementById("contact-form");
+    const submitBtn = document.getElementById("submit-btn");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.value = "Sending...";
+
+      const formData = {
+        from_name: form.from_name.value,
+        to_name: "Timothy",
+        from_email: form.from_email.value,
+        to_email: "peterstimothy155@gmail.com",
+        message: form.message.value,
+      };
+
+      emailjs.send("service_fe2ilod", "template_utrrtf9", formData)
+        .then(() => {
+          alert("Thank you for reaching out! I'll respond to your message shortly.");
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("EmailJS error:", error);
+          alert("Oops! Something went wrong. Please try again later.");
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.value = "Send Message";
+        });
+    });
+  </script>
 </body>
+
 </html>

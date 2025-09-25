@@ -2,8 +2,9 @@ header{
     color: white;
   
 }
+
 body{
-    background-color:chocolate;
+    background-color:#1E3A8A;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
   
@@ -37,10 +38,15 @@ body{
     font-size: 11px;
 }
 .form input[type="button"]{
-    background-color: rgb(186, 46, 186);
+    background-color:rgba(8, 8, 244, 0.226);
     border-radius: 10px;
+    border: none;
     padding: 9px;
    margin-left: 11rem;
+}
+.form input[type="button"]:hover{
+    background-color: #135dfc;
+    cursor: pointer;
 }
 
 .head{
